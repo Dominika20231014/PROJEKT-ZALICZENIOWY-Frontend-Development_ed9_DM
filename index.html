@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sklep samochodowy</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <header id="header">
+    <h1>Sklep samochodowy</h1>
+    <label for="brandSelect">Wybierz markę:</label>
+    <select id="brandSelect" multiple>
+      <option value="all">Wszystkie</option>
+      <option value="Toyota">Toyota</option>
+      <option value="Honda">Honda</option>
+      <option value="Ford">Ford</option>
+      <option value="Tesla">Tesla</option>
+      <option value="BMW">BMW</option>
+      <option value="Audi">Audi</option>
+      <option value="Mercedes-Benz">Mercedes-Benz</option>
+      <option value="Volkswagen">Volkswagen</option>
+      <option value="Subaru">Subaru</option>
+      <option value="Mazda">Mazda</option>
+      <option value="Hyundai">Hyundai</option>
+      <option value="Chevrolet">Chevrolet</option>
+      <option value="Lexus">Lexus</option>
+    </select>
+    <button id="filterButton">Filtruj</button>
+  </header>
+  <div id="car-list"></div>
+  <form id="purchaseForm" style="display: none;">
+    <div id="formHeader">
+    </div>
+    <h2>Formularz zakupu</h2>
+    </div>
+    <div>
+      <label>
+        <input type="radio" name="financing" value="leasing" required> Leasing
+      </label>
+      <label>
+        <input type="radio" name="financing" value="gotowka" required> Gotówka
+      </label>
+    </div>
+    <div>
+      <label for="name">Imię i nazwisko:</label>
+      <input type="text" id="name" name="name" pattern="[A-Za-ząćęłńóśźżĄĆĘŁŃÓŚŹŻ]+(\s[A-Za-ząćęłńóśźżĄĆĘŁŃÓŚŹŻ]+)+" required>
+    </div>
+    <div>
+        <label for="deliveryDate">Data dostawy:</label>
+        <input type="date" id="deliveryDate" name="deliveryDate" required>
+    </div>
+    <h2>Akcesoria</h2>
+    <div id="accessoriesContainer">
+        <label for="accessories">Wybierz akcesoria:</label>
+        <div class="accessories-list">
+        </div>
+      </div>
+    <div id="order-summary" style="display: none;">
+     
+    <h3>Podsumowanie zamówienia</h3>
+      <div id="summary-content"></div>
+    </div>
+    <button type="submit">Zakup</button>
+    <button type="button" id="returnButton">Powrót do wyboru</button>
+  </form>
+  <div id="confirmation" style="display: none;">
+    <p>Dziękujemy za zakup!</p>
+    <p>Metoda płatności: <span id="paymentMethod"></span></p>
+    <img id="carImage" src="" alt="Car Image">
+    <p id="totalPrice"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
